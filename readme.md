@@ -165,14 +165,14 @@ post’lar için.
 
 ## Katkı Yapın
 
-1. `fork` yapın ( [tıkla](https://github.com/gelistiriciyiz-biz/git.gelistiriciyiz.biz/fork) )
+1. `fork` yapın ( [tıkla](https://github.com/gelistiriciyiz-biz/python.gelistiriciyiz.biz/fork) )
 2. Kendi `branch`’inizi yapın (`git checkout -b benim-makalem`)
 3. Yaptıklarınızı `commit` edin (`git commit -am 'Yeni makale'`)
 4. `branch`’i `push` edin (`git push origin benim-makalem`)
 5. Yeni bir **Pull Request** oluşturun!
 
 
-[1]: http://git.gelistiriciyiz.biz
+[1]: http://python.gelistiriciyiz.biz
 [2]: https://github.com/webBoxio/middleman-boilerplate-template
 [3]: https://middlemanapp.com/
 [4]: https://github.com/kippt/jekyll-incorporated
