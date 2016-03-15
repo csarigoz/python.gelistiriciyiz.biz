@@ -43,6 +43,7 @@ activate :blog do |blog|
   blog.paginate = true
   blog.layout = "blog_layout"
   blog.summary_separator = /READ_MORE/
+  blog.summary_length = nil
   blog.taglink = "etiket/{tag}.html"
   blog.tag_template = "pages/tag.html"
   blog.calendar_template = "pages/calendar.html"
