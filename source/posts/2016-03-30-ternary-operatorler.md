@@ -2,6 +2,11 @@
 title: Ternary Operatörler
 date: Mar 30, 2016 10:51
 tags: ternary, ternary operator, conditional, conditional operator
+author:
+  name: "Ali GÖREN"
+  email: "goren.ali@yandex.com"
+  link: "https://aligoren.com"
+  bio: "Python Sevicisi"
 ---
 Tek satırda if kullanma işlemini ternary operatör ile yaparız.
 
