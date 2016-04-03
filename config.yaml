@@ -8,7 +8,8 @@ site:
   cover_image: "cover.jpg"
   social:
     twitter: "python_tips_tr"
-    # facebook: ""
+    google_analytics: "UA-6463685-41"
+    disqus: "pythongelistiriciyizbiz"
   company:
     name: "Geliştiriciyiz.biz"
     url: "http://gelistiriciyiz.biz/"
