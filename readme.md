@@ -104,19 +104,20 @@ rake post["Yeni yazı","May 5 2016 11:00"] # ya da 5 Mayıs 2016 saat 11:00 içi
 
 ## Deployment
 
-[Middleman][3] pek çok farklı özellikle geliyor.
-Ben `:rsync` yöntemini seçtim. Bu işi sağlıklı yapabilmek için, lütfen 
-root’da `creds.rb` dosyasını oluşturun ve;
+GitHub Pages kullanılmaktadır.
 
 ```ruby
-DEPLOY_USER = "kullanıcı_adı"
-DEPLOY_HOST = "server"
-DEPLOY_PATH = "/path/to/site"
+activate :deploy do |deploy|
+  deploy.build_before = true
+  deploy.method   = :git
+  deploy.remote = "origin"
+  deploy.branch = "gh-pages"
+end
 ```
 
-değişkenlerini tanımlayın. Daha sonra `rake deploy` ya da 
-`bundle exec rake deploy` yaparak statik html’leri sunucuza 
-gönderebilirsiniz.
+`rake deploy` ya da `bundle exec rake deploy` yaparak statik 
+html’leri `gh-pages` branch’ine gönderebilirsiniz.
+
 
 ## config.yaml
 

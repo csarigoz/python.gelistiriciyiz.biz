@@ -74,9 +74,8 @@ proxy "/hakkinda/index.html", "/pages/about.html"
 if $USER_CAN_DEPLOY
   activate :deploy do |deploy|
     deploy.build_before = true
-    deploy.method   = :rsync
-    deploy.user     = DEPLOY_USER
-    deploy.host     = DEPLOY_HOST
-    deploy.path     = DEPLOY_PATH
+    deploy.method   = :git
+    deploy.remote = "origin"
+    deploy.branch = "gh-pages"
   end
 end
