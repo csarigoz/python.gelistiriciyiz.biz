@@ -23,8 +23,7 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
       xml.author { 
         xml.name article_author
       }
-      xml.summary article.summary, "type" => "html"
-      # xml.content article.body, "type" => "html"
+      xml.summary print_summary(article), "type" => "html"
     end
   end
 end

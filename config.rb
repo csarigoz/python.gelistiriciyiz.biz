@@ -2,16 +2,6 @@ require 'stringex'
 require 'time'
 require 'active_support/all'
 
-$USER_CAN_DEPLOY = true
-begin
-  require './creds'
-rescue Exception => e
-  $USER_CAN_DEPLOY = false
-  puts "== Dikkat !"
-  puts "== Lütfen deploy yapacaksanız `creds.rb` dosyasını oluşturun!"
-  puts "== Detaylar `readme.md` dosyasında ..."
-end
-
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
@@ -71,11 +61,9 @@ activate :directory_indexes
 proxy "/arsiv/index.html", "/pages/archive.html"
 proxy "/hakkinda/index.html", "/pages/about.html"
 
-if $USER_CAN_DEPLOY
-  activate :deploy do |deploy|
-    deploy.build_before = true
-    deploy.method   = :git
-    deploy.remote = "origin"
-    deploy.branch = "gh-pages"
-  end
+activate :deploy do |deploy|
+  deploy.build_before = true
+  deploy.method   = :git
+  deploy.remote = "origin"
+  deploy.branch = "gh-pages"
 end
