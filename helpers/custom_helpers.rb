@@ -8,7 +8,7 @@ module CustomHelpers
   def print_summary(article)
     unless article.summary.nil?
       close_tag = ''
-      close_tag = '</p>' if article.summary[0,3] == '<p>'
+      close_tag = '</p>' if article.body.length > article.summary.length
       "#{article.summary}#{close_tag}"
     end
   end
