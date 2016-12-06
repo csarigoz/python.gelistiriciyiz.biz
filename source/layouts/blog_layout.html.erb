@@ -47,7 +47,7 @@
                 
             </header>
             
-            <section>
+            <section id="article-detail">
                 <%= yield %>
             </section>
 
@@ -60,6 +60,12 @@
                     </p>
                 </address>
             </footer>
+            
+            <%= partial "partials/related_posts", locals: {
+                page_articles: page_articles,
+            } %>
+            
+            
             <%= partial "partials/disqus" %>
         </div>
     </article>

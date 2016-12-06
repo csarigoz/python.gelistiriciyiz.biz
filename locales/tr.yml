@@ -228,3 +228,6 @@ tr:
     posts_amount_by_month: "%{month} %{year}, <span>%{count}</span> kayıt bulunuyor."
     click_for_year_title: "%{year} yılı arşivi için tıklayın."
     click_for_year_of_month_title: "%{year} yılı, %{month} ayı arşivi için tıklayın"
+    related_articles:
+      one: İlişkili Makale
+      other: İlişkili Makaleler

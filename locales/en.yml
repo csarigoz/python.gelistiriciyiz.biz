@@ -234,3 +234,6 @@ en:
       other: "%{month} %{year}, has <span>%{count}</span> posts."
     click_for_year_title: "Click for %{year} archive."
     click_for_year_of_month_title: "Click for %{month} %{year} archive"
+    related_articles:
+      one: Related Post
+      other: Related Posts

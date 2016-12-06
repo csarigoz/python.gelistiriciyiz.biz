@@ -288,3 +288,31 @@ a {
         background:none;
     }
 }
+
+#search-area {
+  margin: 6rem 0 0 0;
+  input {
+    font-size: 1.2em;
+    border-radius: 0;
+    padding: 1.4em;
+  }
+}
+
+.easy-autocomplete-container ul li b {
+  background-color: #234F96;
+  color: white;
+  padding: 0 .2em;
+}
+
+.related-articles {
+  h2.title {
+    color: $accent;
+  }
+  .links {
+    display: block;
+    margin: .5em 0;
+  }
+  hr {
+    margin: 2em 0 !important;
+  }
+}
