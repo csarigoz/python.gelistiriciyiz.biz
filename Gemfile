@@ -9,3 +9,4 @@ gem "builder", "~> 3.0"
 gem "stringex"
 gem "redcarpet"
 gem "sanitize"
+gem 't', '~> 2.10'
