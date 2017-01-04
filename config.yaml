@@ -14,8 +14,8 @@ site:
     name: "Geliştiriciyiz.biz"
     url: "http://gelistiriciyiz.biz/"
   product:
-    name: "GELİŞTİRİCİYİZ.BİZ"
-    url: "http://gelistiriciyiz.biz/"
+    name: "python.gelistiriciyiz.biz"
+    url: "http://python.gelistiriciyiz.biz/"
   main_author:
     name: "Full Name"
     email: "email@example.com"

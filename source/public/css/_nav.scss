@@ -16,9 +16,8 @@
     }
     
     .brand img {
-        height:40px;
-        margin-right:10px;
-        margin-top:-2px;
+        max-height: 40px;
+        margin-top: -2px;
     }
     
     .dropdown {
@@ -73,6 +72,8 @@
             line-height:0;
             padding-right:20px;
         }
+        
+        a { font-family: "Helvetica Neue", "Helvetica", "Arial"; }
     }
 }
 
