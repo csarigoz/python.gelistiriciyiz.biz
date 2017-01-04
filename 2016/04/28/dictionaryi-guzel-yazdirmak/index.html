@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary'i güzel yazdırmak &mdash; Python Püf Noktaları</title>
+    <meta name="title" content="Dictionary'i güzel yazdırmak &mdash; Python Püf Noktaları">
+    <link rel="canonical" href="http://python.gelistiriciyiz.biz/2016/04/28/dictionaryi-guzel-yazdirmak/index.html">
+    <meta property="og:title" content="Dictionary'i güzel yazdırmak &mdash; Python Püf Noktaları"/>
+    <meta property="og:url" content="http://python.gelistiriciyiz.biz/2016/04/28/dictionaryi-guzel-yazdirmak/index.html"/>
+    <meta property="og:image" content="http://python.gelistiriciyiz.biz/public/images/cover.jpg"/>
+    <meta property="og:description" content="Dictionary’i daha düzgün görüntülemek için json desteği;  import jsondef pp(hash, indent=4, sort_keys=True):    print json.dumps(dict(hash), indent=indent, sort_keys=sort_keys)  Yapmanız gereken pp(BURAYA_DICTIONARY_GELSIN)"/>
+    <meta name="description" content="Dictionary’i daha düzgün görüntülemek için json desteği;  import jsondef pp(hash, indent=4, sort_keys=True):    print json.dumps(dict(hash), indent=indent, sort_keys=sort_keys)  Yapmanız gereken pp(BURAYA_DICTIONARY_GELSIN)"/>
+    <meta property="og:site_name" content="Python Püf Noktaları">
+    <link rel="shortcut icon" href="/public/images/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/public/images/logo.png"/>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://python.gelistiriciyiz.biz/feed.xml" />
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,700,300,900&subset=latin,latin-ext" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="/public/css/application.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <section class="site-nav">
+        <header>
+            <nav id="navigation">
+                <a class="brand" href="/"><img alt="Logo" src="/public/images/logo.png" /></a>
+                <a href="/" class="home">Anasayfa</a>
+                <a href="http://python.gelistiriciyiz.biz/">python.gelistiriciyiz.biz</a>
+                <a href="/hakkinda/">Hakkında</a>
+                <a href="/arsiv/">Arşiv</a>
+            </nav>
+
+            <nav class="tagline hidden-xs">
+<a href="http://gelistiriciyiz.biz/" class="btn btn-outline">Geliştiriciyiz.biz</a>            </nav>
+        </header>
+    </section>
+
+        
+
+    <article>
+        <div class="container">
+            <header>
+                <div class="meta">
+                    <address><a rel="author" href="http://ugur.ozyilmazel.com" title="Uğur Özyılmazel" target="_blank">Uğur Özyılmazel</a></address> &mdash;
+                    <time pubdate datetime="2016-04-28T14:39:00+03:00" title="28 Nisan 2016, Perşembe 14:39">28 Nisan 2016, Perşembe 14:39</time>
+                </div>
+                <h1 class="title">Dictionary'i güzel yazdırmak</h1>
+                <h2 class="subtitle">PrettyPrinter’dan daha pretty!</h2>
+                    <div class="tags">
+                        <span class="badge"><a href="/etiket/dict/">dict</a></span>
+                        <span class="badge"><a href="/etiket/pprint/">pprint</a></span>
+                    </div>
+                
+            </header>
+            
+            <section id="article-detail">
+                <p>Dictionary’i daha düzgün görüntülemek için <code>json</code> desteği;</p>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">def</span> <span class="nf">pp</span><span class="p">(</span><span class="nb">hash</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">hash</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">)</span>
+</code></pre>
+
+<p>Yapmanız gereken <code>pp(BURAYA_DICTIONARY_GELSIN)</code></p>
+
+            </section>
+
+            <footer>
+                <address>
+                    <img class="avatar" src="http://www.gravatar.com/avatar/033485f7e18823d4ccabb24e5cb4935f" />
+                    <p>
+                        <strong><a rel="author" href="http://ugur.ozyilmazel.com" title="{{ page.author_name }}" target="_blank">Uğur Özyılmazel</a></strong><br>
+                        <span class="muted">Yazılım Geliştiricisi</span>
+                    </p>
+                </address>
+            </footer>
+            
+            
+            
+            
+            <div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//pythongelistiriciyizbiz.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+        </div>
+    </article>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav>
+                <a href="http://gelistiriciyiz.biz/">Geliştiriciyiz.biz</a> &middot;
+                <a href="/">Anasayfa</a> &middot;
+                <a href="/hakkinda/">Hakkında</a> &middot;
+                <a href="/arsiv/">Arşiv</a>
+            </nav>
+        
+            <nav class="social">
+                <a href="https://twitter.com/python_tips_tr" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+                <a href="/feed.xml" title="RSS Feed"><i class="icon icon-rss black"></i></a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <script src="/public/js/retina-0.0.2.js" type="text/javascript"></script>
+    <script src="/public/js/app.js" type="text/javascript"></script>
+    
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-6463685-41', 'auto');
+          ga('send', 'pageview');
+        </script>
+        <script id="dsq-count-scr" src="//pythongelistiriciyizbiz.disqus.com/count.js" async></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Python Püf Noktaları</title>
+  <subtitle>Python ile ilgili Türkçe püf noktaları</subtitle>
+  <id>http://python.gelistiriciyiz.biz</id>
+  <link href="http://python.gelistiriciyiz.biz"/>
+  <link href="http://python.gelistiriciyiz.biz/feed.xml" rel="self"/>
+  <updated>2016-12-13T10:22:00+03:00</updated>
+  <author>
+    <name>Uğur Özyılmazel</name>
+  </author>
+  <entry>
+    <title>namedtuple ile veri yapısı</title>
+    <link rel="alternate" href="http://python.gelistiriciyiz.biz/2016/12/13/namedtuple-ile-veri-yapisi/"/>
+    <id>http://python.gelistiriciyiz.biz/2016/12/13/namedtuple-ile-veri-yapisi/</id>
+    <published>2016-12-13T10:22:00+03:00</published>
+    <updated>2016-12-13T11:21:59+03:00</updated>
+    <author>
+      <name>Uğur Özyılmazel</name>
+    </author>
+    <summary type="html">&lt;p&gt;Basit veri yapılarına ihtiyacınız olduğunda kullanabileceğiniz bir fonksiyondan
+bahsetmek istiyorum.&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <title>Bir yinelenebilirdeki en büyük ve küçük: `min` ve `max`</title>
+    <link rel="alternate" href="http://python.gelistiriciyiz.biz/2016/06/21/bir-yinelenebilirdeki-en-buyuk-ve-kucuk-min-ve-max/"/>
+    <id>http://python.gelistiriciyiz.biz/2016/06/21/bir-yinelenebilirdeki-en-buyuk-ve-kucuk-min-ve-max/</id>
+    <published>2016-06-21T14:08:00+03:00</published>
+    <updated>2016-06-21T14:46:07+03:00</updated>
+    <author>
+      <name>Uğur Özyılmazel</name>
+    </author>
+    <summary type="html">&lt;p&gt;Bir yinelenebilirdeki (&lt;em&gt;iterable&lt;/em&gt;) en yüksek ve en düşük değeri bulmak için:&lt;/p&gt;
+&lt;pre class="highlight python"&gt;&lt;code&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 4&lt;/span&gt;
+&lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Eğer &lt;strong&gt;integer&lt;/strong&gt; cinsinden iki tane argüman alırsa;&lt;/p&gt;
+&lt;pre class="highlight python"&gt;&lt;code&gt;&lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 100&lt;/span&gt;
+&lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Eğer yinelenebilirin elemanları &lt;code&gt;string&lt;/code&gt; cinsindense alfabetik sıralamaya
+göre işlem yapılır:&lt;/p&gt;
+&lt;pre class="highlight python"&gt;&lt;code&gt;&lt;span class="n"&gt;names&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;"vigo"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"jim"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"commodore"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"atari"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 'vigo'  -- v harfi ile başlıyor&lt;/span&gt;
+&lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 'atari' -- a harfi ile başlıyor&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Eğer &lt;code&gt;string&lt;/code&gt; cinsinden tek bir argüman verilirse bu argüman &lt;code&gt;byte-array&lt;/code&gt; olarak
+yorumlanır, yani karakterlerden oluşan bir liste olur;&lt;/p&gt;
+&lt;pre class="highlight python"&gt;&lt;code&gt;&lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Merhaba millet, ben vigo"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 'v' -- alfabetik olarak v harfi&lt;/span&gt;
+&lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Merhaba millet, ben vigo"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# ' ' -- space karakteri ilk sırada&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ASCII tablosunun bir kısmına baktığımızda;&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;32 -  
+33 - !
+34 - "
+35 - #
+36 - $
+37 - %
+38 - &amp;amp;
+39 - '
+40 - (
+41 - )
+42 - *
+43 - +
+44 - ,
+45 - -
+46 - .
+47 - /
+48 - 0
+49 - 1
+50 - 2
+51 - 3
+52 - 4
+53 - 5
+54 - 6
+55 - 7
+56 - 8
+57 - 9
+58 - :
+59 - ;
+60 - &amp;lt;
+61 - =
+62 - &amp;gt;
+63 - ?
+64 - @
+65 - A
+66 - B
+67 - C
+68 - D
+69 - E
+70 - F
+71 - G
+72 - H
+73 - I
+74 - J
+75 - K
+76 - L
+77 - M
+78 - N
+79 - O
+80 - P
+81 - Q
+82 - R
+83 - S
+84 - T
+85 - U
+86 - V
+87 - W
+88 - X
+89 - Y
+90 - Z
+91 - [
+92 - \
+93 - ]
+94 - ^
+95 - _
+96 - `
+97 - a
+98 - b
+99 - c
+100 - d
+101 - e
+102 - f
+103 - g
+104 - h
+105 - i
+106 - j
+107 - k
+108 - l
+109 - m
+110 - n
+111 - o
+112 - p
+113 - q
+114 - r
+115 - s
+116 - t
+117 - u
+118 - v
+119 - w
+120 - x
+121 - y
+122 - z
+123 - {
+124 - |
+125 - }
+126 - ~
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;şeklinde bir sıralama görürüz.&lt;/p&gt;
+
+&lt;p&gt;Eğer istersek, yapılan &lt;code&gt;sort&lt;/code&gt; işlemini de kendimize göre değiştirebiliriz. Şimdi,
+&lt;code&gt;mix&lt;/code&gt; ile &lt;code&gt;max&lt;/code&gt; işlerini tersine çevirelim:&lt;/p&gt;
+&lt;pre class="highlight python"&gt;&lt;code&gt;&lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c"&gt;# 1 -- 4 yerine&lt;/span&gt;
+&lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c"&gt;# 4 -- 1 yerine&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</summary>
+  </entry>
+  <entry>
+    <title>Liste’den random eleman almak</title>
+    <link rel="alternate" href="http://python.gelistiriciyiz.biz/2016/06/06/listeden-random-eleman-almak/"/>
+    <id>http://python.gelistiriciyiz.biz/2016/06/06/listeden-random-eleman-almak/</id>
+    <published>2016-06-06T12:02:00+03:00</published>
+    <updated>2016-06-21T14:46:07+03:00</updated>
+    <author>
+      <name>Uğur Özyılmazel</name>
+    </author>
+    <summary type="html">&lt;p&gt;Bir liste (&lt;em&gt;dizi&lt;/em&gt;) içinden random (&lt;em&gt;rastgele&lt;/em&gt;) eleman almak:&lt;/p&gt;
+&lt;pre class="highlight python"&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt;
+
+&lt;span class="n"&gt;users&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;"vigo"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"lego"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"mego"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"fugo"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;users&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# python 2.7+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</summary>
+  </entry>
+  <entry>
+    <title>Dictionary'i güzel yazdırmak</title>
+    <link rel="alternate" href="http://python.gelistiriciyiz.biz/2016/04/28/dictionaryi-guzel-yazdirmak/"/>
+    <id>http://python.gelistiriciyiz.biz/2016/04/28/dictionaryi-guzel-yazdirmak/</id>
+    <published>2016-04-28T14:39:00+03:00</published>
+    <updated>2016-06-21T14:46:07+03:00</updated>
+    <author>
+      <name>Uğur Özyılmazel</name>
+    </author>
+    <summary type="html">&lt;p&gt;Dictionary’i daha düzgün görüntülemek için &lt;code&gt;json&lt;/code&gt; desteği;&lt;/p&gt;
+&lt;pre class="highlight python"&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;pp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;hash&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;indent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sort_keys&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dumps&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;hash&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;indent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;indent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sort_keys&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;sort_keys&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Yapmanız gereken &lt;code&gt;pp(BURAYA_DICTIONARY_GELSIN)&lt;/code&gt;&lt;/p&gt;
+</summary>
+  </entry>
+  <entry>
+    <title>Ternary Operatörler</title>
+    <link rel="alternate" href="http://python.gelistiriciyiz.biz/2016/03/30/ternary-operatorler/"/>
+    <id>http://python.gelistiriciyiz.biz/2016/03/30/ternary-operatorler/</id>
+    <published>2016-03-30T10:51:00+03:00</published>
+    <updated>2016-06-21T14:46:07+03:00</updated>
+    <author>
+      <name>Ali GÖREN</name>
+    </author>
+    <summary type="html">&lt;p&gt;Tek satırda &lt;code&gt;if&lt;/code&gt; kullanma işlemini &lt;strong&gt;ternary&lt;/strong&gt; operatör ile yaparız.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;True if KOŞUL else False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Örnek vermek gerekirse;&lt;/p&gt;
+&lt;pre class="highlight python"&gt;&lt;code&gt;&lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="s"&gt;"True"&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s"&gt;"False"&lt;/span&gt; &lt;span class="c"&gt;# 'True'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Bu işlemin haricinde &lt;code&gt;Tuple&lt;/code&gt;’ları kullanarak da ternary operatörler 
+gerçekleştirebiliriz. Burada bilmemiz gereken &lt;strong&gt;Tuple&lt;/strong&gt; içindeki sol 
+değer &lt;code&gt;False&lt;/code&gt;, sağ değer ise &lt;code&gt;True&lt;/code&gt;’ya karşılık gelmektedir.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;(False, True)[KOŞUL]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Bunu daha da açık olarak şöyle gösterebiliriz;&lt;/p&gt;
+&lt;pre class="highlight python"&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;unicode_literals&lt;/span&gt;
+&lt;span class="n"&gt;is_alive&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;u"&lt;/span&gt;&lt;span class="si"&gt;%&lt;/span&gt;&lt;span class="s"&gt;s"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u"Ölmüş"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;u"Yaşıyor"&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="n"&gt;is_alive&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c"&gt;# Yaşıyor&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</summary>
+  </entry>
+  <entry>
+    <title>String’i ters çevir</title>
+    <link rel="alternate" href="http://python.gelistiriciyiz.biz/2016/03/02/stringi-ters-cevir/"/>
+    <id>http://python.gelistiriciyiz.biz/2016/03/02/stringi-ters-cevir/</id>
+    <published>2016-03-02T10:51:00+02:00</published>
+    <updated>2016-06-21T14:46:07+03:00</updated>
+    <author>
+      <name>Uğur Özyılmazel</name>
+    </author>
+    <summary type="html">&lt;p&gt;Herhangi bir String’i ters çevirmek yani &lt;strong&gt;reverse&lt;/strong&gt; etmek için;&lt;/p&gt;
+&lt;pre class="highlight python"&gt;&lt;code&gt;&lt;span class="s"&gt;"hello"&lt;/span&gt;&lt;span class="p"&gt;[::&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c"&gt;# 'olleh'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</summary>
+  </entry>
+</feed>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Püf Noktaları &mdash; Python ile ilgili Türkçe püf noktaları</title>
+    <meta name="title" content="Python Püf Noktaları &mdash; Python ile ilgili Türkçe püf noktaları">
+    <link rel="canonical" href="http://python.gelistiriciyiz.biz/index.html">
+    <meta property="og:title" content="Python Püf Noktaları &mdash; Python ile ilgili Türkçe püf noktaları"/>
+    <meta property="og:url" content="http://python.gelistiriciyiz.biz/index.html"/>
+    <meta property="og:image" content="http://python.gelistiriciyiz.biz/public/images/cover.jpg"/>
+    <meta property="og:description" content="Python ile ilgili Türkçe püf noktaları"/>
+    <meta name="description" content="Python ile ilgili Türkçe püf noktaları"/>
+    <meta property="og:site_name" content="Python Püf Noktaları">
+    <link rel="shortcut icon" href="/public/images/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/public/images/logo.png"/>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://python.gelistiriciyiz.biz/feed.xml" />
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,700,300,900&subset=latin,latin-ext" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="/public/css/easy-autocomplete.css" rel="stylesheet" type="text/css" />
+
+    <link href="/public/css/application.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <section class="site-nav">
+        <header>
+            <nav id="navigation">
+                <a class="brand" href="/"><img alt="Logo" src="/public/images/logo.png" /></a>
+                <a href="/" class="home">Anasayfa</a>
+                <a href="http://python.gelistiriciyiz.biz/">python.gelistiriciyiz.biz</a>
+                <a href="/hakkinda/">Hakkında</a>
+                <a href="/arsiv/">Arşiv</a>
+            </nav>
+
+            <nav class="tagline hidden-xs">
+<a href="http://gelistiriciyiz.biz/" class="btn btn-outline">Geliştiriciyiz.biz</a>            </nav>
+        </header>
+    </section>
+
+    <div class="blog-cover" style="background-image:url(/public/images/cover.jpg);">
+    <section>
+        <div class="container">
+            <h1>Python Püf Noktaları</h1>
+            <h3>Python ile ilgili Türkçe püf noktaları</h3>
+            <a href="https://twitter.com/python_tips_tr" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
+            
+            <a href="/feed.xml" title="RSS Feed"><i class="icon icon-rss"></i></a>
+        </div>
+    </section>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+            <div id="search-area" class="hidden-xs">
+                <form id="search_form" onsubmit="return false;">
+                    <input type="text" class="form-control" name="search_keyword" id="search_keyword">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<article class="container">
+    <section class="index">
+    <img class="avatar" src="http://www.gravatar.com/avatar/033485f7e18823d4ccabb24e5cb4935f" />
+    <div>
+        <h2 class="title">
+            <a rel="prefetch" title="Detaylar için tıklayın" href="/2016/12/13/namedtuple-ile-veri-yapisi/">namedtuple ile veri yapısı &raquo;</a>
+        </h2>
+        <p>Basit veri yapılarına ihtiyacınız olduğunda kullanabileceğiniz bir fonksiyondan
+bahsetmek istiyorum.</p>
+        <div class="meta">
+            Yazan: <address>Uğur Özyılmazel</address> &mdash;
+            <time pubdate datetime="2016-12-13T10:22:00+03:00" title="13 Aralık 2016, Salı 10:22">13 Aralık 2016, Salı 10:22</time>
+        </div>
+        
+            <div class="tags">
+                <span class="badge"><a href="/etiket/py2-6/">py2.6+</a></span>
+                <span class="badge"><a href="/etiket/collections/">collections</a></span>
+            </div>
+        
+    </div>
+    <hr>
+</section>
+<section class="index">
+    <img class="avatar" src="http://www.gravatar.com/avatar/033485f7e18823d4ccabb24e5cb4935f" />
+    <div>
+        <h2 class="title">
+            <a rel="prefetch" title="Detaylar için tıklayın" href="/2016/06/21/bir-yinelenebilirdeki-en-buyuk-ve-kucuk-min-ve-max/">Bir yinelenebilirdeki en büyük ve küçük: `min` ve `max` &raquo;</a>
+        </h2>
+        <p>Bir yinelenebilirdeki (<em>iterable</em>) en yüksek ve en düşük değeri bulmak için:</p>
+<pre class="highlight python"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c"># 4</span>
+<span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c"># 1</span>
+</code></pre>
+
+<p>Eğer <strong>integer</strong> cinsinden iki tane argüman alırsa;</p>
+<pre class="highlight python"><code><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c"># 100</span>
+<span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c"># 1</span>
+</code></pre>
+
+<p>Eğer yinelenebilirin elemanları <code>string</code> cinsindense alfabetik sıralamaya
+göre işlem yapılır:</p>
+<pre class="highlight python"><code><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">"vigo"</span><span class="p">,</span> <span class="s">"jim"</span><span class="p">,</span> <span class="s">"commodore"</span><span class="p">,</span> <span class="s">"atari"</span><span class="p">]</span>
+<span class="nb">max</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="c"># 'vigo'  -- v harfi ile başlıyor</span>
+<span class="nb">min</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="c"># 'atari' -- a harfi ile başlıyor</span>
+</code></pre>
+
+<p>Eğer <code>string</code> cinsinden tek bir argüman verilirse bu argüman <code>byte-array</code> olarak
+yorumlanır, yani karakterlerden oluşan bir liste olur;</p>
+<pre class="highlight python"><code><span class="nb">max</span><span class="p">(</span><span class="s">"Merhaba millet, ben vigo"</span><span class="p">)</span> <span class="c"># 'v' -- alfabetik olarak v harfi</span>
+<span class="nb">min</span><span class="p">(</span><span class="s">"Merhaba millet, ben vigo"</span><span class="p">)</span> <span class="c"># ' ' -- space karakteri ilk sırada</span>
+</code></pre>
+
+<p>ASCII tablosunun bir kısmına baktığımızda;</p>
+<pre class="highlight plaintext"><code>32 -  
+33 - !
+34 - "
+35 - #
+36 - $
+37 - %
+38 - &amp;
+39 - '
+40 - (
+41 - )
+42 - *
+43 - +
+44 - ,
+45 - -
+46 - .
+47 - /
+48 - 0
+49 - 1
+50 - 2
+51 - 3
+52 - 4
+53 - 5
+54 - 6
+55 - 7
+56 - 8
+57 - 9
+58 - :
+59 - ;
+60 - &lt;
+61 - =
+62 - &gt;
+63 - ?
+64 - @
+65 - A
+66 - B
+67 - C
+68 - D
+69 - E
+70 - F
+71 - G
+72 - H
+73 - I
+74 - J
+75 - K
+76 - L
+77 - M
+78 - N
+79 - O
+80 - P
+81 - Q
+82 - R
+83 - S
+84 - T
+85 - U
+86 - V
+87 - W
+88 - X
+89 - Y
+90 - Z
+91 - [
+92 - \
+93 - ]
+94 - ^
+95 - _
+96 - `
+97 - a
+98 - b
+99 - c
+100 - d
+101 - e
+102 - f
+103 - g
+104 - h
+105 - i
+106 - j
+107 - k
+108 - l
+109 - m
+110 - n
+111 - o
+112 - p
+113 - q
+114 - r
+115 - s
+116 - t
+117 - u
+118 - v
+119 - w
+120 - x
+121 - y
+122 - z
+123 - {
+124 - |
+125 - }
+126 - ~
+</code></pre>
+
+<p>şeklinde bir sıralama görürüz.</p>
+
+<p>Eğer istersek, yapılan <code>sort</code> işlemini de kendimize göre değiştirebiliriz. Şimdi,
+<code>mix</code> ile <code>max</code> işlerini tersine çevirelim:</p>
+<pre class="highlight python"><code><span class="nb">max</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c"># 1 -- 4 yerine</span>
+<span class="nb">min</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c"># 4 -- 1 yerine</span>
+</code></pre>
+
+        <div class="meta">
+            Yazan: <address>Uğur Özyılmazel</address> &mdash;
+            <time pubdate datetime="2016-06-21T14:08:00+03:00" title="21 Haziran 2016, Salı 14:08">21 Haziran 2016, Salı 14:08</time>
+        </div>
+        
+            <div class="tags">
+                <span class="badge"><a href="/etiket/builtin-functions/">builtin-functions</a></span>
+            </div>
+        
+    </div>
+    <hr>
+</section>
+<section class="index">
+    <img class="avatar" src="http://www.gravatar.com/avatar/033485f7e18823d4ccabb24e5cb4935f" />
+    <div>
+        <h2 class="title">
+            <a rel="prefetch" title="Detaylar için tıklayın" href="/2016/06/06/listeden-random-eleman-almak/">Liste’den random eleman almak &raquo;</a>
+        </h2>
+        <p>Bir liste (<em>dizi</em>) içinden random (<em>rastgele</em>) eleman almak:</p>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="s">"vigo"</span><span class="p">,</span> <span class="s">"lego"</span><span class="p">,</span> <span class="s">"mego"</span><span class="p">,</span> <span class="s">"fugo"</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">users</span><span class="p">)</span> <span class="c"># python 2.7+</span>
+</code></pre>
+
+        <div class="meta">
+            Yazan: <address>Uğur Özyılmazel</address> &mdash;
+            <time pubdate datetime="2016-06-06T12:02:00+03:00" title="06 Haziran 2016, Pazartesi 12:02">06 Haziran 2016, Pazartesi 12:02</time>
+        </div>
+        
+            <div class="tags">
+                <span class="badge"><a href="/etiket/random/">random</a></span>
+            </div>
+        
+    </div>
+    <hr>
+</section>
+<section class="index">
+    <img class="avatar" src="http://www.gravatar.com/avatar/033485f7e18823d4ccabb24e5cb4935f" />
+    <div>
+        <h2 class="title">
+            <a rel="prefetch" title="Detaylar için tıklayın" href="/2016/04/28/dictionaryi-guzel-yazdirmak/">Dictionary'i güzel yazdırmak &raquo;</a>
+        </h2>
+        <p>Dictionary’i daha düzgün görüntülemek için <code>json</code> desteği;</p>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">def</span> <span class="nf">pp</span><span class="p">(</span><span class="nb">hash</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">hash</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">)</span>
+</code></pre>
+
+<p>Yapmanız gereken <code>pp(BURAYA_DICTIONARY_GELSIN)</code></p>
+
+        <div class="meta">
+            Yazan: <address>Uğur Özyılmazel</address> &mdash;
+            <time pubdate datetime="2016-04-28T14:39:00+03:00" title="28 Nisan 2016, Perşembe 14:39">28 Nisan 2016, Perşembe 14:39</time>
+        </div>
+        
+            <div class="tags">
+                <span class="badge"><a href="/etiket/dict/">dict</a></span>
+                <span class="badge"><a href="/etiket/pprint/">pprint</a></span>
+            </div>
+        
+    </div>
+    <hr>
+</section>
+<section class="index">
+    <img class="avatar" src="http://www.gravatar.com/avatar/a760c201a9690d3c4786a76f8c07649e" />
+    <div>
+        <h2 class="title">
+            <a rel="prefetch" title="Detaylar için tıklayın" href="/2016/03/30/ternary-operatorler/">Ternary Operatörler &raquo;</a>
+        </h2>
+        <p>Tek satırda <code>if</code> kullanma işlemini <strong>ternary</strong> operatör ile yaparız.</p>
+<pre class="highlight plaintext"><code>True if KOŞUL else False
+</code></pre>
+
+<p>Örnek vermek gerekirse;</p>
+<pre class="highlight python"><code><span class="n">status</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="s">"True"</span> <span class="k">if</span> <span class="n">status</span> <span class="k">else</span> <span class="s">"False"</span> <span class="c"># 'True'</span>
+</code></pre>
+
+<p>Bu işlemin haricinde <code>Tuple</code>’ları kullanarak da ternary operatörler 
+gerçekleştirebiliriz. Burada bilmemiz gereken <strong>Tuple</strong> içindeki sol 
+değer <code>False</code>, sağ değer ise <code>True</code>’ya karşılık gelmektedir.</p>
+<pre class="highlight plaintext"><code>(False, True)[KOŞUL]
+</code></pre>
+
+<p>Bunu daha da açık olarak şöyle gösterebiliriz;</p>
+<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<span class="n">is_alive</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">print</span> <span class="s">u"</span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="p">(</span><span class="s">u"Ölmüş"</span><span class="p">,</span> <span class="s">u"Yaşıyor"</span><span class="p">)[</span><span class="n">is_alive</span><span class="p">]</span> <span class="c"># Yaşıyor</span>
+</code></pre>
+
+        <div class="meta">
+            Yazan: <address>Ali GÖREN</address> &mdash;
+            <time pubdate datetime="2016-03-30T10:51:00+03:00" title="30 Mart 2016, Çarşamba 10:51">30 Mart 2016, Çarşamba 10:51</time>
+        </div>
+        
+            <div class="tags">
+                <span class="badge"><a href="/etiket/ternary/">ternary</a></span>
+                <span class="badge"><a href="/etiket/conditional-operator/">conditional operator</a></span>
+            </div>
+        
+    </div>
+    <hr>
+</section>
+<section class="index">
+    <img class="avatar" src="http://www.gravatar.com/avatar/033485f7e18823d4ccabb24e5cb4935f" />
+    <div>
+        <h2 class="title">
+            <a rel="prefetch" title="Detaylar için tıklayın" href="/2016/03/02/stringi-ters-cevir/">String’i ters çevir &raquo;</a>
+        </h2>
+        <p>Herhangi bir String’i ters çevirmek yani <strong>reverse</strong> etmek için;</p>
+<pre class="highlight python"><code><span class="s">"hello"</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c"># 'olleh'</span>
+</code></pre>
+
+        <div class="meta">
+            Yazan: <address>Uğur Özyılmazel</address> &mdash;
+            <time pubdate datetime="2016-03-02T10:51:00+02:00" title="02 Mart 2016, Çarşamba 10:51">02 Mart 2016, Çarşamba 10:51</time>
+        </div>
+        
+            <div class="tags">
+                <span class="badge"><a href="/etiket/universal/">universal</a></span>
+            </div>
+        
+    </div>
+    <hr>
+</section>
+
+    <section class="pagination">
+
+
+</section>
+</article>
+
+
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav>
+                <a href="http://gelistiriciyiz.biz/">Geliştiriciyiz.biz</a> &middot;
+                <a href="/">Anasayfa</a> &middot;
+                <a href="/hakkinda/">Hakkında</a> &middot;
+                <a href="/arsiv/">Arşiv</a>
+            </nav>
+        
+            <nav class="social">
+                <a href="https://twitter.com/python_tips_tr" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+                <a href="/feed.xml" title="RSS Feed"><i class="icon icon-rss black"></i></a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <script src="/public/js/retina-0.0.2.js" type="text/javascript"></script>
+    <script src="/public/js/app.js" type="text/javascript"></script>
+        <script src="/public/js/jquery.easy-autocomplete.js" type="text/javascript"></script>
+    <script>
+    $(document).ready(function(){
+        var search_options = {
+            url: "/search.json",
+            placeholder: 'Başlık ve etiketler içinde arayabilirsiniz...',
+            getValue: "title",
+            list: {
+                maxNumberOfElements: 10,
+                match: { enabled: true },
+                onChooseEvent: function(){
+                    var selected = $("#search_keyword").getSelectedItemData().url;
+                    window.location.href = selected;
+                },
+            }
+        };
+
+        $("#search_keyword").easyAutocomplete(search_options);
+    });
+    </script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-6463685-41', 'auto');
+          ga('send', 'pageview');
+        </script>
+        <script id="dsq-count-scr" src="//pythongelistiriciyizbiz.disqus.com/count.js" async></script>
+</body>
+</html>
