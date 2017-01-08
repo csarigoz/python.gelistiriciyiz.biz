@@ -26,5 +26,5 @@ Elde ettiğimiz `ciftMumlar` listesi aşağıdaki gibi olacaktır.
 
 ```python
 >>> ciftMumlar
-['iki mumdur', 'dört mumdur', 'on dört mumdur']
+['iki mumdur', 'dort mumdur', 'on dort mumdur']
 ```
