@@ -12,7 +12,7 @@ author:
 
 Bir liste içerisinde yer alan string'ler üzerinde Python'un `re` modülü ile regular expression sorgu döndürebiliriz.READ_MORE
 
-Aşağıdaki örnekte mumlar listesinde çift sayıda mum barındıran string'leri filtreleyeceğiz.
+Aşağıdaki örnekte `mumlar` listesinde çift sayıda mum barındıran string'leri filtreleyeceğiz.
 
 ```python
 import re
