@@ -5,7 +5,7 @@ tags: regex
 author:
   name: Çağrı Sarıgöz
   email: cagri.sarigoz@gmail.com
-  link: https://cagrisarigoz.com
+  link: http://cagrisarigoz.com
   bio: Data Science Heveslisi
   twitter: cagrisarigoz
 ---
@@ -26,5 +26,5 @@ Elde ettiğimiz `ciftMumlar` listesi aşağıdaki gibi olacaktır.
 
 ```python
 >>> ciftMumlar
-['iki mumdur', 'dört mumdur', 'on dört mumdur']
+['iki mumdur', 'dort mumdur', 'on dort mumdur']
 ```
