@@ -22,7 +22,7 @@ regex = re.compile('iki|dort')
 ciftMumlar = [i for i in mumlar if regex.search(i)]
 ```
 
-Elde ettiğimiz `ciftMumlar listesi aşağıdaki gibi olacaktır.
+Elde ettiğimiz `ciftMumlar` listesi aşağıdaki gibi olacaktır.
 
 ```python
 >>> ciftMumlar
