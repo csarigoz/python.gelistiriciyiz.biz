@@ -10,3 +10,4 @@ gem "stringex"
 gem "redcarpet"
 gem "sanitize"
 gem 't', '~> 2.10'
+gem 'bitly', '~> 1.0', '>= 1.0.2'
