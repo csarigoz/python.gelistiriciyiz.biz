@@ -1,67 +1,135 @@
+![Version](https://img.shields.io/badge/version-1.0.0-yellow.svg)
+
 # python.gelistiriciyiz.biz
 
-[http://python.gelistiriciyiz.biz][1] sitesinin
-kaynak kodu. [webBox.io’nun][2] [Middleman][3] template / statik
-sayfa üreticisi çatısı üzerine üzerine [jekyll-incorporated][4]
-temasının modifiyesi ile yapılmıştır.
+http://python.gelistiriciyiz.biz
 
+[Geliştiriciyiz Biz!][1] ağının sitelerinden biridir. [Middleman][2] altyapısı
+üzerinde modifiye edilmiş [jekyll-incorporated][3] teması kullanmaktadır.
+
+---
+
+![Geliştiriciyiz.biz](http://gelistiriciyiz.biz/public/images/gelistiriciyiz.biz.png "Geliştiriciyiz.biz")
+
+---
 
 ## Kurulum
 
-* Ruby 2.2.2 (*En az 2 olsa yeterli*)
-
-Repo’yu clone ettikten sonra;
+- Ruby 2.2.2 (*En az gereksinim*)
 
 ```bash
+git clone https://github.com/gelistiriciyiz-biz/cs.gelistiriciyiz.biz cs.gelistiriciyiz.biz
+cd cs.gelistiriciyiz.biz/
 bundle install --path=vendor/bundle --binstubs
-rake          # ön izleme sunucusunu çalıştırır
+rake # Ön izleme / geliştirme sunucusu
+```
 
-rake -T       # Task’leri göster...
+Tüm task’ler:
 
-rake deploy   # Deploy
-rake preview  # Ön izleme / geliştirme sunucusu
+```bash
+rake -T
+
+rake build                       # Test için build
+rake deploy                      # Deploy
+rake post[post_title,post_date]  # Yeni yazı ekle
+rake preview                     # Ön izleme / geliştirme sunucusu
+```
+
+Eğer kendinize ait özel task eklemek isterseniz, projenin root dizinine
+(`Rakefile`*’ın olduğu seviye*) `private.rake` dosyası ekleyip içine
+kendi task’lerinizi yazmanız yeterlidir.
+
+Yeni post yapmak için:
+
+```bash
+rake post["Yeni postum"]               # ya da
+rake post["Yeni postum","Feb 8, 2017"] # 8 Şubat 2017’deki bir post için
+
+# source/posts/2017-02-08-yeni-postum.md dosyasını üretir.
+```
+
+Tüm post’lar `source/posts/` altındadır. Unutulmaması gereken önemli bir husus da,
+post dosyasının adı, post tarihi ile doğru orantılıdır. `2017-02-08-yeni-postum.md`
+adlı dosya varsa, içindeki tarih mutlaka `date: Feb 2, 2017 HH:MM` gibi olmalıdır.
+İçerideki `date:` bilgisi ile dosya adı uyuşmazsa uygulama hata verir.
+
+Eğer post içindeki tarih bilgisini değiştirirseniz mutlaka `source/posts/` altındaki
+dosyanın adını da uygun olan `YIL-AY-GÜN-BAŞLIK.md` bilgilerini girmelisiniz.
+
+Eğer post dosyanız `YIL-AY-GÜN-BAŞLIK.md.erb` gibi `.md.erb` ile biterse, post
+içinde **embedded ruby** kullanma imkanınız olur yani;
+
+```erb
+<% puts "Merhaba" %>
+<%
+ary = [1, 2, 3]
+ary.each do |n|
+  concat "#{n}<br/>"
+end
+%>
 ```
 
 ## Front-matter Değişkenleri
 
-```yaml
-title: Başlık
-subtitle: Alt Başlık (Opsiyonel)
-published: false (Opsiyonel)
-date: Tarih (YIL-AY-GÜN SAAT:DAKİKA)
-tags: etiket,etiket,etiket (Opsiyonel)
-cover: Fotoğraf (Opsiyonel)
+Post oluşturunca karşınıza gelen dosyada `yaml` değişkenleri bulunuyor.
 
-(Opsiyonel)
+```yaml
+---
+title: "BAŞLIK"
+date: Ay Gün, Yıl Saat:Dakika
+# tags: tag1,tag2
+# subtitle: 
+# published: false
+# cover: 
 author:
-    name: "AD-SOYAD"
-    email: "E-POSTA"
-    link: "LİNK"
-    bio: "1 SATIR BİO"
+  name: "AD-SOYAD"
+  email: "E-POSTA"
+  link: "http://LINK"
+  bio: "1 SATIR BİO"
+  twitter: "twitter_username"
+---
 ```
+
+Eğer proje root’una `config_custom.yaml` adında bir dosya oluşturup içini;
+
+```yaml
+main_author:
+  name: "AD-SOYAD"
+  email: "E-POSTA"
+  link: "http://LINK"
+  bio: "1 SATIR BİO"
+  twitter: "twitter_username"
+```
+
+kendi bilgilerinizle doldurursanız, her `rake post` işeminde bu dosyadan
+bilgiler okunacaktır. Eğer böyle bir dosya bulunmazsa `config.yaml` içinde
+ne yazıyorsa o okunacaktır.
 
 **published: false**
 
-Bu **Draft** yani sadece kendi yerel bilgisayarınızda görünecek,
-deploy edince görünmeyecek post şeklidir.
+Eğer henüz yazıyı tamamlamadıysanız, yani **Draft** şeklinde, yazmaya devam
+ediyorsanız `published: false` durumunda yazıyı görüntüler ama build/deploy
+edemezsiniz.
 
 **tags:**
 
-Etiketleri virgül ile ayırıyoruz. Türkçe karakter kullanmıyoruz.
+Virgül ile ayrılmış şekilde, yazı ile ilgili etiketler: `tags: core,module` gibi...
 
 **cover:**
 
-Yazıya fotoğraf eklemek için. Eğer `cover: "resim.jpg"` gibi
-kullanırsanız; resmin yeri `source/public/images/posts/resim.jpg`
-olmalı. İsterseniz dış link de verebilirsiniz:
-`cover: "http://example.com/resim.jpg"`
+Yazıya kapak resmi eklemek için kullanabilirsiniz:
 
+```yaml
+cover: "resim.jpg"                    # bakılacak yer: 
+                                      # source/public/images/posts/resim.jpg
 
-## HTML Yardımcılar
+cover: "http://example.com/resim.jpg" # dış dünyadan resim ekleme
+```
 
 **READ_MORE**
 
-Özet kısmı için kullanır. Örnek:
+Özet kısmı için kullanır. Anasayfada listelenirken eğer ilgili post’da `READ_MORE`
+görürse sadece oraya kadar olan kısmı yazar. Örnek:
 
     ---
     title: "Daha detaylı `git-branch`"
@@ -69,11 +137,12 @@ olmalı. İsterseniz dış link de verebilirsiniz:
     tags: branch
     ---
     Local’deki ve Remote’daki yani varolan tüm **branch**'leri göstermek 
-    için;
-    READ_MORE
+    için; READ_MORE
     
+    Yazının detayları ve devamı burada...
 
-**zoom resim**
+
+### Post içine resim ve video eklemek
 
 Eğer yazı içinde tıklayınca büyüyecek bir resim koymak isterseniz;
 
@@ -81,7 +150,7 @@ Eğer yazı içinde tıklayınca büyüyecek bir resim koymak isterseniz;
 <div class="full zoomable"><img src="resim.jpg" alt="resim"></div>
 ```
 
-**video oynatıcı**
+şeklinde in-line html yazabilirsiniz. Aynı şekilde video için;
 
 ```html
 <div class="flash-video">
@@ -89,22 +158,117 @@ Eğer yazı içinde tıklayınca büyüyecek bir resim koymak isterseniz;
 </div>
 ```
 
+kullanabilirsiniz.
+
+## Markdown Özellikleri
+
+* Otomatik link. `http(s)` ile başlayan metinler otomatik olarak linke dönüşür.
+* Üzeri çizgili (*strikethrough*) metin için `~~` arasında metin yazın: `~~üstü çizili~~`
+* Üst simge kullanımı (*superscript*) için `^(metin)`: `2^(nd)`
+* Altı çizili (*underline*) için `_` arasına metin yazın: `Bu _altı çizili_ ama bu *italic*`
+* Belirtmek, vurgulamak (*highlight*) için `==` arasına metin yazın: `Bu ==belirtmeli bir metin==`
+
+### Tablo
+
+Yazı içinde tablo kullanmak için:
+
+    Markdown Tablo:
+    
+       #    | Açıklama
+    --------|--------------
+    1       | Örnek satır 1
+    2       | Örnek satır 2
+    3       | Örnek satır 3
+    4       | Örnek satır 4
+
+Eğer hücreleri sağa, ya da ortalı hizalama yapmak isterseniz:
+
+        #   | Açıklama
+    -------:|--------------       # -------: sağa
+    1       | Örnek satır 1
+    
+        #   | Açıklama
+    :------:|--------------       # :------: ortalı
+    1       | Örnek satır 1
+
+### Kod bloğu
+
+Pygments kütüphanesi yardımıyla neredeyse tüm programlama dillerini renklendirilmiş
+olarak kullanmak mümkün. Desteklenen diller: http://pygments.org/languages/
+Yapmanız gereken **\`\`\`dil** şeklinde bloğa başlamanız.
+
+    # Python için
+    
+    ```python
+    def fonk(a):
+        print(a)
+    ```
+    
+    # Ruby için
+    ```ruby
+    [1, 2, 3].each do |n|
+      puts "#{n}"
+    end
+
+Eğer dil belirtmezseniz [Markdown](https://daringfireball.net/projects/markdown/) 
+özelliği olan **4 tane boşluk** ile başlayarak kod bloğu tanımlaması yapabilirsiniz.
+Yazı içinde (*inline*) kod parçası kullanmak için, yine: \`kod\` (*backtick’ler arasında*)
 şeklinde kullanabilirsiniz.
 
+### Mathjax Desteği
 
-## Yeni Post
+Matematiksel ifadeleri web sayfasında göstermek için hazırlanmış [Mathjax](https://www.mathjax.org/)
+kütüphanesi yardımıyla post içine matematik ifadeler ekleyebilirsiniz:
 
-Yeni post yapmak için `rake post` yapmanız yeterli.
+    $\bold{t}\ = f(N)$
 
-```bash
-rake post["Yeni yazı"]                    # ya da
-bundle exec rake post["Yeni yazı"]        # ya da
-rake post["Yeni yazı","May 5 2016 11:00"] # ya da 5 Mayıs 2016 saat 11:00 için
+Yazı içinde (*inline*) ifade kullanmak için;
+
+* `$` ile başlayan biten; ya da
+* `\\(` başlayan, `\\)` ile biten;
+
+Büyük ve ortalı şekilde kullanmak için;
+
+* `$$` ile başlayan ve biten; ya da
+* `\\[` başlayan, `\\]` ile biten;
+
+kullanabilirsiniz. Daha detaylı açıklama için: http://docs.mathjax.org/en/latest/index.html
+
+## `config.yaml` dosyası
+
+Site ile ilgili genel değişklenlerin tanımlandığı dosya. Örnek dosya aşağıdaki
+gibidir:
+
+```yaml
+site:
+  production_url: "http://cs.gelistiriciyiz.biz"
+  title: "Computer Sciences Püf Noktaları"
+  subtitle: "Bilgisayar Bilimleri"
+  description: "Bilgisayar Bilimlerinin temel konuları."
+  logo: "logo.png"                      # source/public/images/ altında
+  cover_image: "cover.jpg"              # source/public/images/ altında
+  social:
+    twitter: "cs_tips_tr"               # eğer twitter yoksa comment edin
+    google_analytics: "UA-6463685-52"   # eğer analytics yoksa comment edin
+    disqus: "cs-gelistiriciyiz-biz"     # eğer disqus yoksa comment edin
+  company:
+    name: "Geliştiriciyiz.biz"
+    url: "http://gelistiriciyiz.biz/"
+  product:
+    name: "cs.gelistiriciyiz.biz"
+    url: "http://cs.gelistiriciyiz.biz/"
+  main_author:                          # bu kısmı doldurmazsanız ilgili bilgler için
+    name: "Full Name"                   # eğer varsa: config_custom.yaml dosyasına
+    email: "email@example.com"          # bakılacaktır!
+    link: "http://example.com"
+    bio: "Title"
+    twitter: "twitter_username"
 ```
 
 ## Deployment
 
-GitHub Pages kullanılmaktadır.
+Deployment mekanizması olarak **Github Pages** kullanılıyor. `config.rb` dosyasında
+görüldüğü gibi:
 
 ```ruby
 activate :deploy do |deploy|
@@ -115,70 +279,8 @@ activate :deploy do |deploy|
 end
 ```
 
-`rake deploy` ya da `bundle exec rake deploy` yaparak statik 
-html’leri `gh-pages` branch’ine gönderebilirsiniz.
-
-
-## config.yaml
-
-Site ile ilgili genel değişkenler. Eğer post içinde `author` tanımlaması
-yoksa, bu dosyadı `main_author` ’da bulunan değerler kullanılır tüm
-post’lar için.
-
-```yaml
-site:
-  production_url: "http://domain"
-  title: "Başlık"
-  subtitle: "Alt Başlık"
-  tag_line: "Mini slogan"
-  description: "Açıklaması"
-  logo: "minik logo"
-  cover_image: "site ana fotoğraf"
-  social:
-    twitter: 
-    facebook:
-    disqus:
-    google_analytics:
-  company:
-    name: "FİRMA_ADI"
-    url: "http://firma_web_adresi"
-  product:
-    name: "ÜRÜN_ADI"
-    url: "http://ürün_adresi"
-  main_author:
-    name: "AD-SOYAD"
-    email: "E-POSTA"
-    link: "LİNK"
-    bio: "1 SATIR BİO"
-```
-
-## config_custom.yaml
-
-Bu dosya `.gitignore`’dadır ve eğer aynı repo’da çalışıyorsanız, her kullanıcı
-kendi kopyasında bu dosyadan oluşturmalı ve `config.yaml` dosyasındaki `main_author`
-boş olmalıdır.
-
-```yaml
-main_author:
-  name: "Uğur Özyılmazel"
-  email: "adsoyad@domain.com"
-  link: "http://ugur.ozyilmazel.com"
-  bio: "Yazılım Geliştiricisi"
-```
-
-## PULL REQUEST ile katkı
-
-Yaptığınız post dosyalarındaki front-matter alanındaki `author`;
-
-```yaml
-author:
-    name: "AD-SOYAD"
-    email: "E-POSTA"
-    link: "LİNK"
-    bio: "1 SATIR BİO"
-```
-
-mutlaka dolu olmalıdır.
+build işleminden sonra `gh-pages` branch’ine push ediliyor. `rake deploy`
+ya da duruma göre `bundle exec rake deploy` ile bu işi yapabilirsiniz.
 
 ## Lisans
 
@@ -186,14 +288,13 @@ Bu proje MIT lisansıyla lisanslanmıştır.
 
 ## Katkı Yapın
 
-1. `fork` yapın ( [tıkla](https://github.com/gelistiriciyiz-biz/python.gelistiriciyiz.biz/fork) )
+1. `fork` yapın: https://github.com/gelistiriciyiz-biz/python.gelistiriciyiz.biz/fork
 2. Kendi `branch`’inizi yapın (`git checkout -b benim-makalem`)
 3. Yaptıklarınızı `commit` edin (`git commit -am 'Yeni makale'`)
 4. `branch`’i `push` edin (`git push origin benim-makalem`)
 5. Yeni bir **Pull Request** oluşturun!
 
 
-[1]: http://python.gelistiriciyiz.biz
-[2]: https://github.com/webBoxio/middleman-boilerplate-template
-[3]: https://middlemanapp.com/
-[4]: https://github.com/kippt/jekyll-incorporated
+[1]: http://gelistiriciyiz.biz "Geliştiriciyiz Biz!"
+[2]: https://middlemanapp.com/ "Middleman"
+[3]: https://github.com/kippt/jekyll-incorporated

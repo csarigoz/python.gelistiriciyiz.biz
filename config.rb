@@ -18,7 +18,16 @@ set :images_dir, 'public/images'
 
 activate :syntax
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true
+set :markdown, {
+  fenced_code_blocks: true,
+  smartypants: true,
+  tables: true,
+  autolink: true,
+  strikethrough: true,
+  superscript: true,
+  underline: true,
+  highlight: true,
+}
 
 config_data = YAML.load(File.read("config.yaml"))
 
