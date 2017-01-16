@@ -9,7 +9,7 @@ author:
   bio: Yazılım Geliştiricisi
 ---
 
-Bir yinelenebilirdeki (*iterable*) en yüksek ve en düşük değeri bulmak için:
+Bir yinelenebilirdeki (*iterable*) en yüksek ve en düşük değeri bulmak için:READ_MORE
 
 ```python
 a = [1, 2, 3, 4]

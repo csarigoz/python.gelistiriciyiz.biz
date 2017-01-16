@@ -8,7 +8,7 @@ author:
   link: "https://aligoren.com"
   bio: "Python Sevicisi"
 ---
-Tek satırda `if` kullanma işlemini **ternary** operatör ile yaparız.
+Tek satırda `if` kullanma işlemini **ternary** operatör ile yaparız.READ_MORE
 
     True if KOŞUL else False
 
